@@ -25,7 +25,11 @@ function handleAddStudent(){
   setStudents(prevState => [...prevState, newStudent]);
 }
 
-
+useEffect(() => {
+  // corpo do useEffect
+  //o useEffect é executado assim que a nossa interface é renderizada
+  console.log("o useEffect foi chamado!");
+},[])
 
   return (
     <div className='container'>

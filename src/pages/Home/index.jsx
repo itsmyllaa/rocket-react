@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+//O useState e o useEffect são exemplos de hooks
+//Os hooks são funções que permitem ligar e 
+//conectar os recursos de estados e ciclos de vida 
+//do react a partir de componentes 100% funcionais.
 import './styles.css';
 
 import { Card } from '../../components/Card';

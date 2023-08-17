@@ -11,6 +11,7 @@ import { Card } from '../../components/Card';
 export function Home() {
   const [studentName, setStudentName] = useState();
   const [students, setStudents] = useState([]);
+  const [user, setUser] = useState({ name:'', avatar:''});
 
 function handleAddStudent(){
   const newStudent = {
@@ -28,7 +29,14 @@ function handleAddStudent(){
 useEffect(() => {
   // corpo do useEffect
   //o useEffect é executado assim que a nossa interface é renderizada
-  console.log("o useEffect foi chamado!");
+  fetch('https://api.github.com/users/itsmyllaa')
+  .then(response => response.json())
+  .then(data => { 
+    setUser({
+      name: data.name,
+      avatar: data.avatar_url,
+    })
+  })
 },[students, setStudentName])
 
   return (
@@ -36,8 +44,8 @@ useEffect(() => {
       <header>
       <h1>Lista de presença</h1>
       <div>
-        <strong>Camila</strong>
-        <img src="https://github.com/itsmyllaa.png" alt="Foto de perfil" />
+        <strong>{user.name}</strong>
+        <img src={user.avatar} alt="Foto de perfil" />
       </div>
       </header>
       <input 

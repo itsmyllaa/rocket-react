@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 //O useState e o useEffect são exemplos de hooks
 //Os hooks são funções que permitem ligar e 
 //conectar os recursos de estados e ciclos de vida 
@@ -9,7 +9,7 @@ import './styles.css';
 import { Card } from '../../components/Card';
 
 export function Home() {
-  const [studentName, setStudentName] = useState("Fulano(a)");
+  const [studentName, setStudentName] = useState();
   const [students, setStudents] = useState([]);
 
 function handleAddStudent(){
@@ -25,9 +25,17 @@ function handleAddStudent(){
   setStudents(prevState => [...prevState, newStudent]);
 }
 
+
+
   return (
     <div className='container'>
-      <h1>Eu {studentName}, estarei presente!</h1>
+      <header>
+      <h1>Lista de presença</h1>
+      <div>
+        <strong>Camila</strong>
+        <img src="https://github.com/itsmyllaa.png" alt="Foto de perfil" />
+      </div>
+      </header>
       <input 
       type="text" 
       placeholder="Digite um nome"

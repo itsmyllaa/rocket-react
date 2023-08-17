@@ -13,6 +13,7 @@ export function Home() {
       <Card name="Thays Virginia" time=" 15:30:22"/>
       <Card name="Natália Júlia" time=" 18:40:57"/>
       <Card name="Raquel Lopes" time=" 21:20:10"/>
+      <Card name="Rhany Gomes" time=" 21:20:10"/>
 
     </div>
   )

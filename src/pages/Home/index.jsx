@@ -29,15 +29,19 @@ function handleAddStudent(){
 useEffect(() => {
   // corpo do useEffect
   //o useEffect é executado assim que a nossa interface é renderizada
-  fetch('https://api.github.com/users/itsmyllaa')
-  .then(response => response.json())
-  .then(data => { 
-    setUser({
-      name: data.name,
-      avatar: data.avatar_url,
-    })
-  })
-},[students, setStudentName])
+async function fetchData() { 
+const response = await fetch('https://api.github.com/users/itsmyllaa')
+const data = await response.json();
+
+ setUser({
+  name: data.name,
+  avatar: data.avatar_url,
+});
+}
+
+fetchData();
+
+},[]);
 
   return (
     <div className='container'>
